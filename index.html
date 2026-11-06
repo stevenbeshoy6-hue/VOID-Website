@@ -14,35 +14,35 @@
   scroll-behavior: smooth;
 }
 
-:root {
-  --red: #ff1028;
-  --dark: #080808;
-}
-
 body {
   background: #050505;
   color: white;
   font-family: Arial, sans-serif;
 }
 
+:root {
+  --red: #ff1028;
+}
+
+/* NAVBAR */
 header {
   background: #080808;
   border-bottom: 1px solid #75000d;
-  padding: 20px 7%;
+  padding: 18px 7%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
 .logo {
-  font-size: 36px;
+  color: red;
+  font-size: 32px;
   font-weight: 1000;
-  color: var(--red);
   letter-spacing: 5px;
-  text-shadow: 0 0 15px red, 0 0 35px red;
+  text-shadow: 0 0 15px red, 0 0 30px red;
 }
 
 nav {
@@ -53,164 +53,167 @@ nav {
 nav a {
   color: white;
   text-decoration: none;
+  transition: .3s;
 }
 
 nav a:hover {
   color: red;
 }
 
+/* WELCOME */
 .hero {
-  min-height: 570px;
+  min-height: 490px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 40px 15px;
-  background: radial-gradient(ellipse, #48000c, #150003 45%, #050505 80%);
+  background: radial-gradient(
+    ellipse at center,
+    #700010 0%,
+    #300007 40%,
+    #050505 85%
+  );
 }
 
-.hero .crown {
-  color: red;
-  font-size: 55px;
-  text-shadow: 0 0 25px red;
-}
-
-.welcome {
-  font-size: 28px;
+.welcome-new {
+  font-size: clamp(15px, 3vw, 22px);
   letter-spacing: 7px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 0 0 15px red;
 }
 
 .hero h1 {
-  font-size: clamp(80px, 17vw, 155px);
-  color: red;
-  letter-spacing: 12px;
-  text-shadow: 0 0 15px red, 0 0 45px red, 0 0 80px red;
+  font-size: clamp(90px, 20vw, 165px);
+  color: #ff1028;
+  font-weight: 1000;
+  letter-spacing: 15px;
+  text-shadow: 0 0 15px red, 0 0 40px red, 0 0 80px #b00019;
   animation: glow 2s infinite alternate;
 }
 
 .hero p {
-  color: #ccc;
-  line-height: 2;
-  font-size: 18px;
+  color: white;
+  font-size: 20px;
+  margin-top: 12px;
 }
 
+.hero-line {
+  width: 150px;
+  height: 3px;
+  background: red;
+  box-shadow: 0 0 15px red;
+  margin-top: 20px;
+}
+
+.hero .hero-subtitle {
+  color: #ff7b89;
+  font-size: 13px;
+  letter-spacing: 4px;
+}
+
+/* SECTIONS */
 .section {
-  padding: 75px 7%;
+  padding: 65px 7%;
   text-align: center;
 }
 
 .section-title {
   color: var(--red);
-  font-size: 35px;
+  font-size: 32px;
   text-shadow: 0 0 15px red;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
 }
 
+/* SERVER BUTTONS */
 .servers {
-  max-width: 950px;
+  max-width: 650px;
   margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 30px;
-}
-
-.server-card {
-  background: linear-gradient(145deg,#200006,#090909);
-  border: 1px solid #a00016;
-  border-radius: 20px;
-  padding: 35px 20px;
-  box-shadow: 0 0 20px #50000a;
-  transition: .3s;
-}
-
-.server-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 35px red;
-}
-
-.server-card h2 {
-  margin: 20px 0;
-  font-size: 27px;
-}
-
-.server-card p {
-  color: #aaa;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-/* Minecraft Dirt Block */
-.dirt-block {
-  width: 125px;
-  height: 125px;
-  margin: 10px auto 25px;
-  position: relative;
-  border: 5px solid #512b12;
-  background:
-    linear-gradient(90deg,transparent 48%,#0003 49% 52%,transparent 53%),
-    linear-gradient(0deg,#633717 48%,#86502b 49%);
-  box-shadow: 0 0 25px #8c491c;
-}
-
-.dirt-block::before {
-  content: "";
-  position: absolute;
-  top: -12px;
-  left: -5px;
-  right: -5px;
-  height: 32px;
-  background: repeating-linear-gradient(
-    90deg,#287b19 0 25%,#49a928 25% 50%
-  );
-  border: 5px solid #225b15;
-}
-
-.dirt-block::after {
-  content: "";
-  position: absolute;
-  top: 30px;
-  left: 15px;
-  width: 12px;
-  height: 12px;
-  background: #b37b48;
-  box-shadow: 35px 20px #b37b48,
-  65px 45px #b37b48,
-  10px 65px #42220f,
-  55px 75px #42220f;
-}
-
-.rp-symbol {
-  height: 125px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: red;
-  font-size: 90px;
-  text-shadow: 0 0 30px red;
+  flex-direction: column;
+  gap: 22px;
 }
 
-.btn {
-  display: block;
-  text-decoration: none;
+.join-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  text-align: center;
+  padding: 20px;
   color: white;
-  background: #ce0019;
-  padding: 14px;
-  margin-top: 13px;
-  border-radius: 9px;
+  background: linear-gradient(90deg,#850010,#ef001e,#850010);
+  border: 1px solid red;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 21px;
   font-weight: bold;
-  box-shadow: 0 0 15px red;
+  box-shadow: 0 0 20px #a00018;
   transition: .3s;
 }
 
-.btn:hover {
-  background: red;
+.join-btn:hover {
   transform: scale(1.04);
   box-shadow: 0 0 30px red;
 }
 
+.join-btn small {
+  color: #ffe0e4;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/* RULE CARDS */
+.rule-boxes {
+  max-width: 650px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 18px;
+}
+
+.rule-box {
+  background: #150508;
+  border: 1px solid #ff1028;
+  border-radius: 14px;
+  padding: 25px 12px;
+  text-align: center;
+  box-shadow: 0 0 15px #58000c;
+  transition: .3s;
+}
+
+.rule-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px red;
+}
+
+.rule-box h2 {
+  color: #ff2038;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.rule-box p {
+  color: #bbb;
+  margin-bottom: 17px;
+  font-size: 14px;
+}
+
+.rule-box a {
+  display: block;
+  background: #bd001c;
+  color: white;
+  text-decoration: none;
+  padding: 12px 8px;
+  border-radius: 8px;
+}
+
+/* RULES */
 .rules-section {
-  padding: 70px 7%;
+  padding: 65px 7%;
   text-align: center;
   scroll-margin-top: 90px;
 }
@@ -229,7 +232,6 @@ nav a:hover {
   padding: 17px;
   margin-bottom: 13px;
   line-height: 1.9;
-  transition: .3s;
 }
 
 .rule:hover {
@@ -249,6 +251,7 @@ nav a:hover {
   font-weight: bold;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   background: #080808;
@@ -270,22 +273,51 @@ footer .welcome-message {
   font-weight: bold;
 }
 
+/* ANIMATION */
 @keyframes glow {
-  from { text-shadow: 0 0 12px red,0 0 25px red; }
-  to { text-shadow: 0 0 30px red,0 0 75px red; }
+  from {
+    text-shadow: 0 0 12px red, 0 0 25px red;
+  }
+  to {
+    text-shadow: 0 0 30px red, 0 0 75px red;
+  }
 }
 
+/* MOBILE */
 @media(max-width:600px) {
   header {
     flex-direction: column;
     gap: 15px;
   }
+
   nav {
     gap: 12px;
     font-size: 13px;
   }
-  .section,.rules-section {
-    padding: 50px 18px;
+
+  .section, .rules-section {
+    padding: 45px 15px;
+  }
+
+  .rule-boxes {
+    gap: 10px;
+    padding: 0 5px;
+  }
+
+  .rule-box {
+    padding: 18px 7px;
+  }
+
+  .rule-box h2 {
+    font-size: 16px;
+  }
+
+  .join-btn {
+    font-size: 17px;
+  }
+
+  .welcome-new {
+    letter-spacing: 4px;
   }
 }
 </style>
@@ -294,7 +326,7 @@ footer .welcome-message {
 <body>
 
 <header>
-  <div class="logo">VOID ♛</div>
+  <div class="logo">VOID</div>
   <nav>
     <a href="#home">الرئيسية</a>
     <a href="#servers">السيرفرات</a>
@@ -303,47 +335,54 @@ footer .welcome-message {
 </header>
 
 <section class="hero" id="home">
-  <div class="crown">♛</div>
-  <div class="welcome">WELCOME TO</div>
+  <div class="welcome-new">WELCOME TO OUR COMMUNITY</div>
   <h1>VOID</h1>
-  <p>مرحباً بك في مجتمع VOID الرسمي</p>
-  <p>PLAY • CONNECT • ENJOY</p>
+  <p>أهلاً بك في عالم VOID</p>
+  <div class="hero-line"></div>
+  <p class="hero-subtitle">YOUR WORLD • YOUR COMMUNITY</p>
 </section>
 
 <section class="section" id="servers">
+
   <h2 class="section-title">OUR SERVERS</h2>
 
   <div class="servers">
 
-    <div class="server-card">
-      <div class="rp-symbol">♛</div>
-      <h2>VOID RP</h2>
-      <p>Welcome To VOID Roleplay Community</p>
+    <a class="join-btn"
+       href="https://discord.gg/vDuANC6Wq"
+       target="_blank" rel="noopener noreferrer">
+      JOIN VOID RP
+      <small>انضمام إلى عالم VOID</small>
+    </a>
 
-      <a class="btn" href="https://discord.gg/vDuANC6Wq" target="_blank">
-        JOIN RP DISCORD
-      </a>
+    <a class="join-btn"
+       href="https://discord.gg/fvVPqwrx"
+       target="_blank" rel="noopener noreferrer">
+      JOIN VOID MINECRAFT
+      <small>الانضمام إلى عالم VOID</small>
+    </a>
 
-      <a class="btn" href="#rp-rules">RP RULES</a>
+  </div>
+
+  <div class="rule-boxes">
+
+    <div class="rule-box">
+      <h2>RP RULES</h2>
+      <p>قوانين VOID RP</p>
+      <a href="#rp-rules">VIEW RP RULES</a>
     </div>
 
-    <div class="server-card">
-      <div class="dirt-block"></div>
-      <h2>VOID MINECRAFT</h2>
-      <p>Welcome To VOID Minecraft Community</p>
-
-      <a class="btn" href="https://discord.gg/fvVPqwrx" target="_blank">
-        JOIN MINECRAFT DISCORD
-      </a>
-
-      <a class="btn" href="#mc-rules">MINECRAFT RULES</a>
+    <div class="rule-box">
+      <h2>MINECRAFT RULES</h2>
+      <p>قوانين VOID Minecraft</p>
+      <a href="#mc-rules">VIEW MINECRAFT RULES</a>
     </div>
 
   </div>
 </section>
 
 <section class="rules-section" id="rp-rules">
-  <h2 class="section-title">🔴 VOID ROLEPLAY RULES</h2>
+  <h2 class="section-title">VOID ROLEPLAY RULES</h2>
   <div class="rules">
 
     <div class="rule"><span class="number">01</span> ممنوع القتل العشوائي (RDM).</div>
@@ -362,16 +401,17 @@ footer .welcome-message {
     <div class="rule"><span class="number">14</span> يجب احترام الإدارة والالتزام بقراراتها.</div>
     <div class="rule"><span class="number">15</span> ممنوع تخريب السيناريوهات أو إفساد تجربة اللعب.</div>
 
-    <h2 class="section-title" style="margin-top:40px">⚠️ PUNISHMENT SYSTEM</h2>
+    <h2 class="section-title" style="margin-top:40px">PUNISHMENT SYSTEM</h2>
     <div class="rule">المرة الأولى: تحذير.</div>
     <div class="rule">المرة الثانية: كيك.</div>
     <div class="rule">المرة الثالثة: باند مؤقت.</div>
     <div class="rule">المخالفات الجسيمة: باند نهائي حسب قرار الإدارة.</div>
+
   </div>
 </section>
 
 <section class="rules-section" id="mc-rules">
-  <h2 class="section-title">⛏️ MINECRAFT RULES</h2>
+  <h2 class="section-title">MINECRAFT RULES</h2>
   <div class="rules">
 
     <div class="rule"><span class="number">01</span> ممنوع السب أو الشتم أو إهانة أي لاعب.</div>
@@ -391,16 +431,18 @@ footer .welcome-message {
     <div class="rule"><span class="number">15</span> مخالفة القوانين قد تؤدي إلى التحذير أو الكتم أو الحظر حسب نوع المخالفة.</div>
 
     <div class="rule" style="text-align:center;color:#ff263b">
-      ⛏️ MINECRAFT SERVER
+      MINECRAFT SERVER
       <br><br>
       العب باستمتاع، احترم غيرك، وخلي المنافسة شريفة!
     </div>
+
   </div>
 </section>
 
 <section class="section" id="general">
   <h2 class="section-title">GENERAL COMMUNITY RULES</h2>
   <div class="rules">
+
     <div class="rule">01 - احترام جميع الأعضاء وعدم الإساءة لأي شخص.</div>
     <div class="rule">02 - ممنوع السب أو الشتم أو التنمر.</div>
     <div class="rule">03 - ممنوع الإزعاج أو تكرار الرسائل (Spam).</div>
@@ -409,11 +451,12 @@ footer .welcome-message {
     <div class="rule">06 - ممنوع نشر إعلانات أو روابط بدون إذن.</div>
     <div class="rule">07 - ممنوع إثارة المشاكل بين الأعضاء.</div>
     <div class="rule">08 - الالتزام بقوانين كل سيرفر.</div>
+
   </div>
 </section>
 
 <footer>
-  <h2>VOID ♛</h2>
+  <h2>VOID</h2>
   <p class="welcome-message">إدارة VOID ترحب بكم ❤️😊</p>
   <p>THANK YOU FOR BEING PART OF OUR COMMUNITY</p>
   <p>© 2026 VOID - ALL RIGHTS RESERVED</p>
