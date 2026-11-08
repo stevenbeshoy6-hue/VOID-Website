@@ -3,294 +3,265 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VOID | Official Website</title>
+<title>𝐕𝐎𝐈𝐃</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+ background:#050505;
+ color:white;
+ font-family:Tahoma,Arial,sans-serif;
 }
-
-body {
-    background: #050505;
-    color: white;
-    font-family: Tahoma, Arial, sans-serif;
+#welcome{
+ position:fixed;inset:0;z-index:99;
+ background:#000;
+ display:flex;flex-direction:column;
+ align-items:center;justify-content:center;
+ animation:hide 1s ease 2.5s forwards;
+ pointer-events:none;
 }
-
-/* WELCOME SCREEN */
-#welcome {
-    position: fixed;
-    inset: 0;
-    background: #050505;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 9999;
-    animation: fadeOut 1s ease 3s forwards;
+#welcome h1{
+ color:red;font-size:65px;
+ text-shadow:0 0 25px red;
 }
-
-#welcome h1 {
-    color: red;
-    font-size: 65px;
-    letter-spacing: 5px;
-    text-shadow: 0 0 25px red;
+#welcome p{margin-top:15px;letter-spacing:4px}
+@keyframes hide{
+ to{opacity:0;visibility:hidden}
 }
-
-#welcome p {
-    color: white;
-    margin-top: 15px;
-    letter-spacing: 4px;
+header{
+ text-align:center;padding:25px;
+ border-bottom:2px solid red;
+ background:#090909;
 }
-
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
+.logo{
+ color:red;font-size:42px;
+ text-shadow:0 0 15px red;
 }
-
-/* HEADER */
-header {
-    background: #0b0b0b;
-    padding: 25px;
-    text-align: center;
-    border-bottom: 2px solid red;
+nav{margin-top:18px}
+nav a{
+ color:white;text-decoration:none;
+ margin:12px;font-weight:bold;
 }
-
-.logo {
-    color: red;
-    font-size: 40px;
-    text-shadow: 0 0 15px red;
+nav a:hover{color:red}
+.hero{text-align:center;padding:45px 15px}
+.hero h2{color:red;font-size:32px}
+.hero p{margin-top:15px;color:#aaa}
+.container{max-width:950px;margin:auto;padding:15px}
+.server{
+ background:#101010;
+ border:1px solid #900000;
+ border-radius:15px;
+ overflow:hidden;
+ margin-bottom:40px;
+ box-shadow:0 0 18px #300000;
 }
-
-nav {
-    margin-top: 20px;
+.banner{
+ height:280px;
+ position:relative;
+ overflow:hidden;
+ background:linear-gradient(135deg,#000,#650000,#080808);
+ display:flex;align-items:center;justify-content:center;
 }
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 10px;
-    font-weight: bold;
+.banner svg{
+ position:absolute;width:100%;height:100%;
+ inset:0;
 }
-
-nav a:hover {
-    color: red;
+.banner-title{
+ position:relative;z-index:2;
+ text-align:center;
+ font-size:clamp(30px,6vw,55px);
+ color:white;
+ text-shadow:0 0 20px red;
+ direction:ltr;
 }
-
-/* HERO */
-.hero {
-    text-align: center;
-    padding: 65px 15px;
+.banner-title small{
+ display:block;font-size:17px;
+ color:red;margin-top:12px;
 }
-
-.hero h2 {
-    color: red;
-    font-size: 35px;
+.content{padding:25px;text-align:center}
+.content h2{color:red;margin-bottom:20px}
+.actions{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:12px;
 }
-
-.hero p {
-    margin-top: 15px;
-    color: #aaa;
+.btn{
+ display:block;padding:15px;
+ background:red;color:black;
+ border:0;border-radius:8px;
+ font-size:16px;font-weight:bold;
+ cursor:pointer;text-decoration:none;
 }
-
-/* SECTIONS */
-section {
-    padding: 35px 15px;
-    max-width: 900px;
-    margin: auto;
+.btn:hover{background:white}
+.rules{display:none;margin-top:20px;text-align:right}
+.rules.show{display:block}
+.rule{
+ display:flex;align-items:flex-start;
+ gap:12px;background:#191919;
+ border-right:3px solid red;
+ border-radius:8px;padding:12px;
+ margin:10px 0;line-height:1.8;
 }
-
-.section-title {
-    color: red;
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 25px;
+.number{
+ width:30px;height:30px;min-width:30px;
+ border-radius:50%;background:red;color:black;
+ display:flex;align-items:center;
+ justify-content:center;font-weight:bold;
 }
-
-.card {
-    background: #101010;
-    border: 1px solid #8b0000;
-    border-radius: 12px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 0 12px #300000;
+.penalty-title{color:red;margin:25px 0 15px}
+footer{
+ text-align:center;padding:25px;
+ border-top:2px solid red;color:#aaa;
 }
-
-.card h3 {
-    color: red;
-    text-align: center;
-    margin-bottom: 25px;
-    font-size: 25px;
-}
-
-/* RULES */
-.rule {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: #181818;
-    padding: 13px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border-right: 3px solid red;
-    line-height: 1.7;
-}
-
-.number {
-    background: red;
-    color: black;
-    min-width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    flex-shrink: 0;
-}
-
-/* DISCORD BUTTON */
-.discord {
-    display: block;
-    text-align: center;
-    background: red;
-    color: black;
-    text-decoration: none;
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 25px;
-    font-weight: bold;
-    transition: .3s;
-}
-
-.discord:hover {
-    background: white;
-    transform: scale(1.03);
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    background: #0b0b0b;
-    border-top: 2px solid red;
-    color: #888;
-}
-
-footer span {
-    color: red;
-}
-
-@media(max-width:600px) {
-    #welcome h1 {
-        font-size: 42px;
-    }
-
-    .logo {
-        font-size: 32px;
-    }
-
-    .hero h2 {
-        font-size: 26px;
-    }
+footer span{color:red}
+@media(max-width:600px){
+ .actions{grid-template-columns:1fr}
+ .banner{height:220px}
+ .logo{font-size:34px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- WELCOME -->
 <div id="welcome">
-    <h1>𝐕𝐎𝐈𝐃</h1>
-    <p>WELCOME TO VOID</p>
+ <h1>𝐕𝐎𝐈𝐃</h1>
+ <p>WELCOME TO VOID</p>
 </div>
 
-<!-- HEADER -->
 <header>
-    <h1 class="logo">𝐕𝐎𝐈𝐃</h1>
-
-    <nav>
-        <a href="#home">الرئيسية</a>
-        <a href="#minecraft">Minecraft</a>
-        <a href="#rp">RP</a>
-    </nav>
+ <h1 class="logo">𝐕𝐎𝐈𝐃</h1>
+ <nav>
+  <a href="#minecraft">Minecraft</a>
+  <a href="#rp">RP</a>
+ </nav>
 </header>
 
-<!-- HOME -->
-<div class="hero" id="home">
-    <h2>WELCOME TO VOID</h2>
-    <p>مرحباً بك في عالم VOID</p>
-    <p>اختر القسم الخاص بك واستمتع بتجربتك.</p>
+<div class="hero">
+ <h2>WELCOME TO VOID</h2>
+ <p>مرحباً بك في عالم VOID</p>
 </div>
 
+<div class="container">
+
 <!-- MINECRAFT -->
-<section id="minecraft">
-    <h2 class="section-title">⚔️ MINECRAFT ⚔️</h2>
 
-    <div class="card">
-        <h3>⚔️ قوانين سيرفر MINECRAFT ⚔️</h3>
+<section class="server" id="minecraft">
 
-        <div id="minecraftRules"></div>
+<div class="banner">
 
-        <p style="text-align:center;margin-top:20px;color:red;">
-            ⛏️ MINECRAFT SERVER
-        </p>
+<svg viewBox="0 0 900 300" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="mc" x2="0" y2="1">
+  <stop stop-color="#850000"/>
+  <stop offset="1" stop-color="#050505"/>
+ </linearGradient>
+</defs>
+<rect width="900" height="300" fill="url(#mc)"/>
+<circle cx="720" cy="65" r="48" fill="#ed101b" opacity=".8"/>
+<path d="M0 230 L100 130 180 210 280 100 390 230 500 130 610 240 740 130 900 230 V300 H0Z" fill="#170000"/>
+<path d="M0 255 L130 210 240 250 350 180 480 260 610 190 750 255 900 180 V300 H0Z" fill="#050505"/>
+<g fill="#400000" stroke="#ed101b" stroke-width="3">
+ <rect x="100" y="130" width="65" height="65"/>
+ <rect x="165" y="165" width="65" height="65"/>
+ <rect x="700" y="130" width="65" height="65"/>
+ <rect x="765" y="165" width="65" height="65"/>
+</g>
+<g fill="#ed101b">
+ <rect x="120" y="150" width="12" height="12"/>
+ <rect x="145" y="150" width="12" height="12"/>
+ <rect x="720" y="150" width="12" height="12"/>
+ <rect x="745" y="150" width="12" height="12"/>
+</g>
+<path d="M420 65 L450 25 480 65 470 100 430 100Z" fill="#9b0000" stroke="red" stroke-width="4"/>
+</svg>
 
-        <p style="text-align:center;margin-top:10px;">
-            العب باستمتاع، احترم غيرك، وخلي المنافسة شريفة!
-        </p>
+<div class="banner-title">
+ ⚔ MINECRAFT ⚔
+ <small>VOID MINECRAFT SERVER</small>
+</div>
+</div>
 
-        <a class="discord"
-        href="https://discord.gg/XqjSEEbT"
-        target="_blank">
-        JOIN MINECRAFT DISCORD
-        </a>
-    </div>
+<div class="content">
+<h2>MINECRAFT SERVER</h2>
+
+<div class="actions">
+<a class="btn" href="https://discord.gg/XqjSEEbT" target="_blank" rel="noopener">
+JOIN MINECRAFT DISCORD
+</a>
+
+<button class="btn" onclick="toggleRules('minecraftRules',this)">
+📜 قوانين ماينكرافت
+</button>
+</div>
+
+<div class="rules" id="minecraftRules"></div>
+
+<p style="margin-top:20px">
+العب باستمتاع، احترم غيرك، وخلي المنافسة شريفة!
+</p>
+</div>
 </section>
 
 <!-- RP -->
-<section id="rp">
-    <h2 class="section-title">🔥 ROLEPLAY 🔥</h2>
 
-    <div class="card">
-        <h3>🔴 قوانين الرول بلاي | ROLEPLAY RULES 🔵</h3>
+<section class="server" id="rp">
 
-        <div id="rpRules"></div>
+<div class="banner">
 
-        <h3 style="margin-top:25px;">⚠️ نظام العقوبات</h3>
+<svg viewBox="0 0 900 300" preserveAspectRatio="xMidYMid slice">
+<defs>
+ <linearGradient id="city" x2="0" y2="1">
+  <stop stop-color="#700000"/>
+  <stop offset="1" stop-color="#050505"/>
+ </linearGradient>
+</defs>
+<rect width="900" height="300" fill="url(#city)"/>
+<circle cx="160" cy="55" r="42" fill="#ed101b" opacity=".65"/>
+<g fill="#090909" stroke="#500000" stroke-width="3">
+ <path d="M0 100H90V300H0Z"/>
+ <path d="M100 65H190V300H100Z"/>
+ <path d="M210 125H300V300H210Z"/>
+ <path d="M650 80H750V300H650Z"/>
+ <path d="M760 110H900V300H760Z"/>
+</g>
+<g fill="#ed101b">
+ <path d="M115 90h12v12h-12zm35 0h12v12h-12zm-35 40h12v12h-12zm35 0h12v12h-12z"/>
+ <path d="M675 105h12v12h-12zm35 0h12v12h-12zm-35 40h12v12h-12zm35 0h12v12h-12z"/>
+</g>
+<path d="M0 265 L250 220 480 245 900 210 V300 H0Z" fill="#050505"/>
+<path d="M530 240 L600 210 690 210 760 245 730 270 H550Z" fill="#090909" stroke="#ed101b" stroke-width="4"/>
+<path d="M585 210 L615 185 H680 L710 210Z" fill="#170000" stroke="#ed101b" stroke-width="3"/>
+<circle cx="580" cy="265" r="17" fill="#000" stroke="red" stroke-width="5"/>
+<circle cx="710" cy="265" r="17" fill="#000" stroke="red" stroke-width="5"/>
+</svg>
 
-        <div class="rule">
-            <span class="number">1</span>
-            المرة الأولى: تحذير.
-        </div>
+<div class="banner-title">
+ 🔥 ROLEPLAY 🔥
+ <small>VOID ROLEPLAY SERVER</small>
+</div>
+</div>
 
-        <div class="rule">
-            <span class="number">2</span>
-            المرة الثانية: كيك.
-        </div>
+<div class="content">
+<h2>ROLEPLAY SERVER</h2>
 
-        <div class="rule">
-            <span class="number">3</span>
-            المرة الثالثة: باند مؤقت.
-        </div>
+<div class="actions">
+<a class="btn" href="https://discord.gg/VhxmHdEv7" target="_blank" rel="noopener">
+JOIN RP DISCORD
+</a>
 
-        <div class="rule">
-            <span class="number">4</span>
-            المخالفات الجسيمة: باند نهائي حسب قرار الإدارة.
-        </div>
+<button class="btn" onclick="toggleRules('rpRules',this)">
+📜 قوانين RP
+</button>
+</div>
 
-        <a class="discord"
-        href="https://discord.gg/VhxmHdEv7"
-        target="_blank">
-        JOIN RP DISCORD
-        </a>
-    </div>
+<div class="rules" id="rpRules"></div>
+</div>
 </section>
 
+</div>
+
 <footer>
-    <p>© 2026 <span>𝐕𝐎𝐈𝐃</span> - ALL RIGHTS RESERVED</p>
+© 2026 <span>𝐕𝐎𝐈𝐃</span> ALL RIGHTS RESERVED
 </footer>
 
 <script>
@@ -331,30 +302,61 @@ const rp = [
 "ممنوع تخريب السيناريوهات أو إفساد تجربة اللعب."
 ];
 
-function addRules(id, rules) {
-    const container = document.getElementById(id);
+function addRules(id,list,penalty=false){
+ const box=document.getElementById(id);
 
-    rules.forEach((rule, index) => {
-        const div = document.createElement("div");
-        div.className = "rule";
+ list.forEach((text,i)=>{
+  const row=document.createElement("div");
+  row.className="rule";
 
-        const number = document.createElement("span");
-        number.className = "number";
-        number.textContent = index + 1;
+  const number=document.createElement("span");
+  number.className="number";
+  number.textContent=i+1;
 
-        const text = document.createElement("span");
-        text.textContent = rule;
+  const content=document.createElement("span");
+  content.textContent=text;
 
-        div.appendChild(number);
-        div.appendChild(text);
-        container.appendChild(div);
-    });
+  row.append(number,content);
+  box.appendChild(row);
+ });
+
+ if(penalty){
+  const title=document.createElement("h3");
+  title.className="penalty-title";
+  title.textContent="⚠️ نظام العقوبات";
+  box.appendChild(title);
+
+  [
+   "المرة الأولى: تحذير.",
+   "المرة الثانية: كيك.",
+   "المرة الثالثة: باند مؤقت.",
+   "المخالفات الجسيمة: باند نهائي حسب قرار الإدارة."
+  ].forEach((text,i)=>{
+   const row=document.createElement("div");
+   row.className="rule";
+
+   const number=document.createElement("span");
+   number.className="number";
+   number.textContent=i+1;
+
+   const content=document.createElement("span");
+   content.textContent=text;
+
+   row.append(number,content);
+   box.appendChild(row);
+  });
+ }
 }
 
-addRules("minecraftRules", minecraft);
-addRules("rpRules", rp);
+function toggleRules(id,button){
+ const box=document.getElementById(id);
+ const opened=box.classList.toggle("show");
+ button.setAttribute("aria-expanded",opened);
+}
+
+addRules("minecraftRules",minecraft);
+addRules("rpRules",rp,true);
 
 </script>
-
 </body>
 </html>
