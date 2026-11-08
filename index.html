@@ -1,196 +1,360 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOID Community - الموقع الكامل</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #0c0c0c;
-            color: #fff;
-        }
-        .header {
-            text-align: center;
-            padding: 20px;
-            background: #111;
-            font-size: 1.4rem;
-            font-weight: bold;
-            border-bottom: 2px solid #222;
-        }
-        .section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            padding: 40px 20px;
-        }
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.75);
-        }
-        .content {
-            z-index: 1;
-            max-width: 900px;
-            width: 100%;
-        }
-        .mc-section {
-            background-image: url('https://images.unsplash.com/photo-1627398368558-d21396b27d42?q=80&w=1920&auto=format&fit=crop');
-        }
-        .rp-section {
-            background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1920&auto=format&fit=crop');
-        }
-        h2 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            text-shadow: 0 0 15px rgba(255,255,255,0.4);
-        }
-        .btn-group {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-        .btn {
-            padding: 15px 35px;
-            font-size: 1.2rem;
-            text-decoration: none;
-            color: white;
-            border-radius: 6px;
-            transition: 0.3s;
-            font-weight: bold;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-        .btn-join { background-color: #5865F2; }
-        .btn-join:hover { background-color: #4752C4; }
-        
-        .rules-container {
-            background: rgba(10, 10, 10, 0.9);
-            padding: 30px;
-            border-radius: 12px;
-            text-align: right;
-            border: 1px solid #333;
-            box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
-        }
-        .mc-rules { border-right: 5px solid #5865F2; }
-        .rp-rules { border-right: 5px solid #ff4757; }
-        
-        .rules-container h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .mc-rules h3 { color: #fff; }
-        .rp-rules h3 { color: #ff4757; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VOID | Official Website</title>
 
-        .rules-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-        .rules-list li {
-            background: rgba(25, 25, 25, 0.6);
-            padding: 12px 20px;
-            border-radius: 6px;
-            font-size: 1.1rem;
-            line-height: 1.4;
-        }
-        .penalties-box {
-            margin-top: 20px;
-            background: #2a1010;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #ff4757;
-        }
-        .penalties-box h4 { color: #ff4757; margin-bottom: 5px; }
-    </style>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #050505;
+    color: white;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+/* WELCOME SCREEN */
+#welcome {
+    position: fixed;
+    inset: 0;
+    background: #050505;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 9999;
+    animation: fadeOut 1s ease 3s forwards;
+}
+
+#welcome h1 {
+    color: red;
+    font-size: 65px;
+    letter-spacing: 5px;
+    text-shadow: 0 0 25px red;
+}
+
+#welcome p {
+    color: white;
+    margin-top: 15px;
+    letter-spacing: 4px;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* HEADER */
+header {
+    background: #0b0b0b;
+    padding: 25px;
+    text-align: center;
+    border-bottom: 2px solid red;
+}
+
+.logo {
+    color: red;
+    font-size: 40px;
+    text-shadow: 0 0 15px red;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: red;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 65px 15px;
+}
+
+.hero h2 {
+    color: red;
+    font-size: 35px;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #aaa;
+}
+
+/* SECTIONS */
+section {
+    padding: 35px 15px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.section-title {
+    color: red;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background: #101010;
+    border: 1px solid #8b0000;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 0 12px #300000;
+}
+
+.card h3 {
+    color: red;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+/* RULES */
+.rule {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #181818;
+    padding: 13px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-right: 3px solid red;
+    line-height: 1.7;
+}
+
+.number {
+    background: red;
+    color: black;
+    min-width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* DISCORD BUTTON */
+.discord {
+    display: block;
+    text-align: center;
+    background: red;
+    color: black;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 25px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.discord:hover {
+    background: white;
+    transform: scale(1.03);
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #0b0b0b;
+    border-top: 2px solid red;
+    color: #888;
+}
+
+footer span {
+    color: red;
+}
+
+@media(max-width:600px) {
+    #welcome h1 {
+        font-size: 42px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .hero h2 {
+        font-size: 26px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <div class="header">
-        WELCOME TO VOID — أهلاً بك في فـويد
+<!-- WELCOME -->
+<div id="welcome">
+    <h1>𝐕𝐎𝐈𝐃</h1>
+    <p>WELCOME TO VOID</p>
+</div>
+
+<!-- HEADER -->
+<header>
+    <h1 class="logo">𝐕𝐎𝐈𝐃</h1>
+
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <a href="#minecraft">Minecraft</a>
+        <a href="#rp">RP</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<div class="hero" id="home">
+    <h2>WELCOME TO VOID</h2>
+    <p>مرحباً بك في عالم VOID</p>
+    <p>اختر القسم الخاص بك واستمتع بتجربتك.</p>
+</div>
+
+<!-- MINECRAFT -->
+<section id="minecraft">
+    <h2 class="section-title">⚔️ MINECRAFT ⚔️</h2>
+
+    <div class="card">
+        <h3>⚔️ قوانين سيرفر MINECRAFT ⚔️</h3>
+
+        <div id="minecraftRules"></div>
+
+        <p style="text-align:center;margin-top:20px;color:red;">
+            ⛏️ MINECRAFT SERVER
+        </p>
+
+        <p style="text-align:center;margin-top:10px;">
+            العب باستمتاع، احترم غيرك، وخلي المنافسة شريفة!
+        </p>
+
+        <a class="discord"
+        href="https://discord.gg/XqjSEEbT"
+        target="_blank">
+        JOIN MINECRAFT DISCORD
+        </a>
     </div>
+</section>
 
-    <!-- قسم ماينكرافت -->
-    <section class="section mc-section">
-        <div class="content">
-            <h2>MINECRAFT</h2>
-            <div class="btn-group">
-                <a href="https://discord.gg/XqjSEEbT" class="btn btn-join" target="_blank">انضمام ديسكورد ماينكرافت</a>
-            </div>
-            
-            <div class="rules-container mc-rules">
-                <h3>⚔️ قوانين سيرفر MINECRAFT ⚔️</h3>
-                <ul class="rules-list">
-                    <li>1️⃣ ممنوع السب أو الشتم أو إهانة أي لاعب.</li>
-                    <li>2️⃣ ممنوع استخدام الهاكات أو الغش (Hacks).</li>
-                    <li>3️⃣ ممنوع سرقة ممتلكات اللاعبين (Stealing).</li>
-                    <li>4️⃣ ممنوع تخريب بيوت أو ممتلكات اللاعبين (Griefing).</li>
-                    <li>5️⃣ ممنوع قتل اللاعبين بدون سبب إذا كان نظام السيرفر لا يسمح بذلك.</li>
-                    <li>6️⃣ ممنوع استغلال الأخطاء البرمجية (Bugs & Glitches).</li>
-                    <li>7️⃣ ممنوع استخدام برامج تعطيك أفضلية غير عادلة.</li>
-                    <li>8️⃣ ممنوع الإزعاج أو السبام في الشات.</li>
-                    <li>9️⃣ يجب احترام جميع أعضاء الإدارة وتنفيذ تعليماتهم.</li>
-                    <li>🔟 ممنوع انتحال شخصية الإدارة أو أي لاعب آخر.</li>
-                    <li>1️⃣1️⃣ ممنوع نشر روابط أو إعلانات لسيرفرات أخرى بدون إذن.</li>
-                    <li>1️⃣2️⃣ ممنوع طلب الرتب أو الأدوات من الإدارة بشكل متكرر.</li>
-                    <li>1️⃣3️⃣ ممنوع التنمر أو التمييز بين اللاعبين.</li>
-                    <li>1️⃣4️⃣ ممنوع استغلال الثغرات للحصول على موارد أو أموال داخل اللعبة.</li>
-                    <li>1️⃣5️⃣ مخالفة القوانين قد تؤدي إلى التحذير أو الكتم أو الحظر حسب نوع المخالفة.</li>
-                </ul>
-            </div>
+<!-- RP -->
+<section id="rp">
+    <h2 class="section-title">🔥 ROLEPLAY 🔥</h2>
+
+    <div class="card">
+        <h3>🔴 قوانين الرول بلاي | ROLEPLAY RULES 🔵</h3>
+
+        <div id="rpRules"></div>
+
+        <h3 style="margin-top:25px;">⚠️ نظام العقوبات</h3>
+
+        <div class="rule">
+            <span class="number">1</span>
+            المرة الأولى: تحذير.
         </div>
-    </section>
 
-    <!-- قسم الآر بي -->
-    <section class="section rp-section">
-        <div class="content">
-            <h2>ROLEPLAY</h2>
-            <div class="btn-group">
-                <a href="https://discord.gg/VhxmHdEv7" class="btn btn-join" target="_blank">انضمام ديسكورد آر بي</a>
-            </div>
-
-            <div class="rules-container rp-rules">
-                <h3>🔴 قوانين الرول بلاي | ROLEPLAY RULES 🔵</h3>
-                <ul class="rules-list">
-                    <li>1️⃣ ممنوع القتل العشوائي (RDM).</li>
-                    <li>2️⃣ ممنوع استخدام السيارة لدهس اللاعبين بدون سبب (VDM).</li>
-                    <li>3️⃣ ممنوع استخدام معلومات خارج اللعبة داخل الرول بلاي (Meta Gaming).</li>
-                    <li>4️⃣ ممنوع القيام بأفعال غير واقعية (Power Gaming).</li>
-                    <li>5️⃣ يجب الخوف على حياتك عند التعرض للتهديد (Fear RP).</li>
-                    <li>6️⃣ ممنوع الخروج من السيرفر أثناء السيناريو (Combat Logging).</li>
-                    <li>7️⃣ ممنوع الانتقام بعد الموت (Revenge Kill).</li>
-                    <li>8️⃣ يجب الالتزام بالحياة الجديدة بعد الموت (New Life Rule).</li>
-                    <li>9️⃣ ممنوع التصرفات غير الواقعية التي تفسد الرول بلاي (Fail RP).</li>
-                    <li>🔟 ممنوع استفزاز الشرطة بدون سبب (Cop Baiting).</li>
-                    <li>1️⃣1️⃣ ممنوع التدخل في سيناريوهات الآخرين بدون سبب منطقي.</li>
-                    <li>1️⃣2️⃣ ممنوع استغلال الثغرات أو الأخطاء البرمجية.</li>
-                    <li>1️⃣3️⃣ يجب احترام جميع اللاعبين داخل السيرفر.</li>
-                    <li>1️⃣4️⃣ يجب احترام الإدارة والالتزام بقراراتها.</li>
-                    <li>1️⃣5️⃣ ممنوع تخريب السيناريوهات أو إفساد تجربة اللعب.</li>
-                </ul>
-                <div class="penalties-box">
-                    <h4>⚠️ نظام العقوبات:</h4>
-                    <p>المرة الأولى: تحذير | المرة الثانية: كيك | المرة الثالثة: باند مؤقت | المخالفات الجسيمة: باند نهائي.</p>
-                </div>
-            </div>
+        <div class="rule">
+            <span class="number">2</span>
+            المرة الثانية: كيك.
         </div>
-    </section>
+
+        <div class="rule">
+            <span class="number">3</span>
+            المرة الثالثة: باند مؤقت.
+        </div>
+
+        <div class="rule">
+            <span class="number">4</span>
+            المخالفات الجسيمة: باند نهائي حسب قرار الإدارة.
+        </div>
+
+        <a class="discord"
+        href="https://discord.gg/VhxmHdEv7"
+        target="_blank">
+        JOIN RP DISCORD
+        </a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 <span>𝐕𝐎𝐈𝐃</span> - ALL RIGHTS RESERVED</p>
+</footer>
+
+<script>
+
+const minecraft = [
+"ممنوع السب أو الشتم أو إهانة أي لاعب.",
+"ممنوع استخدام الهاكات أو الغش (Hacks).",
+"ممنوع سرقة ممتلكات اللاعبين (Stealing).",
+"ممنوع تخريب بيوت أو ممتلكات اللاعبين (Griefing).",
+"ممنوع قتل اللاعبين بدون سبب إذا كان نظام السيرفر لا يسمح بذلك.",
+"ممنوع استغلال الأخطاء البرمجية (Bugs & Glitches).",
+"ممنوع استخدام برامج تعطيك أفضلية غير عادلة.",
+"ممنوع الإزعاج أو السبام في الشات.",
+"يجب احترام جميع أعضاء الإدارة وتنفيذ تعليماتهم.",
+"ممنوع انتحال شخصية الإدارة أو أي لاعب آخر.",
+"ممنوع نشر روابط أو إعلانات لسيرفرات أخرى بدون إذن.",
+"ممنوع طلب الرتب أو الأدوات من الإدارة بشكل متكرر.",
+"ممنوع التنمر أو التمييز بين اللاعبين.",
+"ممنوع استغلال الثغرات للحصول على موارد أو أموال داخل اللعبة.",
+"مخالفة القوانين قد تؤدي إلى التحذير أو الكتم أو الحظر حسب نوع المخالفة."
+];
+
+const rp = [
+"ممنوع القتل العشوائي (RDM).",
+"ممنوع استخدام السيارة لدهس اللاعبين بدون سبب (VDM).",
+"ممنوع استخدام معلومات خارج اللعبة داخل الرول بلاي (Meta Gaming).",
+"ممنوع القيام بأفعال غير واقعية (Power Gaming).",
+"يجب الخوف على حياتك عند التعرض للتهديد (Fear RP).",
+"ممنوع الخروج من السيرفر أثناء السيناريو (Combat Logging).",
+"ممنوع الانتقام بعد الموت (Revenge Kill).",
+"يجب الالتزام بالحياة الجديدة بعد الموت (New Life Rule).",
+"ممنوع التصرفات غير الواقعية التي تفسد الرول بلاي (Fail RP).",
+"ممنوع استفزاز الشرطة بدون سبب (Cop Baiting).",
+"ممنوع التدخل في سيناريوهات الآخرين بدون سبب منطقي.",
+"ممنوع استغلال الثغرات أو الأخطاء البرمجية.",
+"يجب احترام جميع اللاعبين داخل السيرفر.",
+"يجب احترام الإدارة والالتزام بقراراتها.",
+"ممنوع تخريب السيناريوهات أو إفساد تجربة اللعب."
+];
+
+function addRules(id, rules) {
+    const container = document.getElementById(id);
+
+    rules.forEach((rule, index) => {
+        const div = document.createElement("div");
+        div.className = "rule";
+
+        const number = document.createElement("span");
+        number.className = "number";
+        number.textContent = index + 1;
+
+        const text = document.createElement("span");
+        text.textContent = rule;
+
+        div.appendChild(number);
+        div.appendChild(text);
+        container.appendChild(div);
+    });
+}
+
+addRules("minecraftRules", minecraft);
+addRules("rpRules", rp);
+
+</script>
 
 </body>
 </html>
